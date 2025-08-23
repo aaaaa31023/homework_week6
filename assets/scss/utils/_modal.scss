@@ -1,0 +1,88 @@
+// _modal.scss
+
+.modal-content {
+  border-radius: 16px; // 圓角
+  overflow: hidden;
+}
+
+.modal-body {
+  padding: 0; // 移除預設 padding
+}
+
+.modal-left {
+  background-color: #f5f5f5;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.modal-right {
+  padding: 2rem;
+}
+
+.register-link {
+  color: $primary; // Bootstrap 藍色
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// new
+/* 統一控制對話框最大寬（桌機） */
+#authModal .modal-dialog,
+#registerModal .modal-dialog {
+  /* 720～1200 間自動伸縮；多數 1440 畫面會落在 ~1100 */
+  max-width: clamp(720px, 80vw, 1200px);
+}
+
+/* 內容列：左右雙欄 */
+.auth-layout {
+  --auth-img-basis: clamp(320px, 40vw, 700px); /* 不寫死，但最多 700px */
+  display: flex;
+  gap: 0;
+  align-items: stretch; /* 讓左右同高 */
+}
+
+/* 登入圖放右邊 → 反向排列 */
+.auth-layout--reverse {
+  flex-direction: row-reverse;
+}
+
+/* 圖片欄/表單欄 */
+.auth-illustration {
+  flex: 0 0 var(--auth-img-basis);
+  overflow: hidden;
+}
+.auth-pane {
+  flex: 1 1 auto; /* 表單吃掉剩餘空間 */
+  min-width: 0; /* 防止內容撐寬 */
+}
+
+/* 讓圖填滿容器 */
+.auth-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 圓角：只有圖那一側跟外框吻合 */
+#registerModal .auth-illustration img {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+#authModal .auth-illustration img {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+/* 手機（<992px）：隱藏圖片，保留表單滿版 */
+@media (max-width: 991.98px) {
+  .auth-illustration {
+    display: none;
+  }
+}

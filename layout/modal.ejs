@@ -1,0 +1,239 @@
+<!-- Auth Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body d-flex">
+        <!-- 左邊 Banner 圖片（桌機顯示，手機隱藏） -->
+        <div class="modal-left d-none d-lg-block col-6">
+          <img src="/assets/images/login/girl.png" alt="banner" />
+        </div>
+
+        <!-- 右邊登入區 -->
+        <div class="modal-right col-12 col-lg-6 p-4 py-lg-6">
+          <div class="d-flex align-items-center mb-lg-6 mb-5">
+            <h3 class="fw-bold mb-0 text-center flex-grow-1">登入</h3>
+            <button
+              type="button"
+              class="btn-close ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- 快速登入 -->
+          <div class="d-grid gap-4 border-bottom">
+            <button
+              class="btn btn-outline-natural-85 text-dark py-3"
+              type="button"
+            >
+              <span class="align-bottom me-1"
+                ><img
+                  src="/assets/images/login/google-icon.png"
+                  alt="google-icon"
+                  style="width: 20px"
+              /></span>
+              Google
+            </button>
+            <button
+              class="btn btn-outline-natural-85 text-dark mb-5 py-3"
+              type="button"
+            >
+              <span class="align-bottom me-1"
+                ><img
+                  src="/assets/images/login/discord-icon.png"
+                  alt=" discord-icon"
+                  style="width: 20px"
+              /></span>
+              Discord
+            </button>
+          </div>
+
+          <form class="py-5">
+            <input type="email" class="form-control mb-4" placeholder="帳號" />
+
+            <!-- 密碼 + icon + 忘記密碼 -->
+            <div class="position-relative mb-3">
+              <input
+                type="password"
+                class="form-control pe-5"
+                placeholder="密碼"
+                id="passwordInput"
+              />
+              <!-- 眼睛 icon -->
+              <span
+                class="material-icons-outlined position-absolute top-50 end-0 translate-middle-y me-3"
+                style="cursor: pointer"
+                onclick="togglePassword()"
+                >visibility_off</span
+              >
+            </div>
+            <p class="fs-body-sm text-natural-50 text-end mb-4">忘記密碼</p>
+
+            <div>
+              <button type="submit" class="btn btn-dark w-100 py-3">
+                送出
+                <span class="material-icons-outlined align-bottom me-1">
+                  chevron_right
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <!-- 註冊 -->
+          <p class="text-center mt-4">
+            還不是會員？
+            <a
+              href="#"
+              class="link-primary text-decoration-none"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-bs-dismiss="modal"
+            >
+              快速註冊
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 註冊 -->
+<!-- Register Modal -->
+<!-- Register Modal -->
+<div
+  class="modal fade"
+  id="registerModal"
+  tabindex="-1"
+  aria-labelledby="registerTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body flex-lg-row-reverse d-flex">
+        <!-- 左邊 Banner（桌機顯示） -->
+        <div class="modal-left d-none d-lg-block col-6">
+          <img
+            src="/assets/images/login/boy.png"
+            alt="banner"
+            class="w-100 h-100 object-fit-cover rounded-end"
+          />
+        </div>
+
+        <!-- 右側內容 -->
+        <div class="modal-right col-12 col-lg-6 p-4 py-lg-6">
+          <div class="d-flex align-items-center mb-lg-6 mb-5">
+            <h3 id="registerTitle" class="fw-bold mb-0 text-center flex-grow-1">
+              註冊
+            </h3>
+            <button
+              type="button"
+              class="btn-close ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="關閉"
+            ></button>
+          </div>
+
+          <!-- 快速註冊方式（同登入保持一致） -->
+          <div class="d-grid gap-4 border-bottom">
+            <button
+              class="btn btn-outline-natural-85 text-dark py-3"
+              type="button"
+            >
+              <span class="align-bottom me-1"
+                ><img
+                  src="/assets/images/login/google-icon.png"
+                  alt="google-icon"
+                  style="width: 20px"
+              /></span>
+              Google
+            </button>
+            <button
+              class="btn btn-outline-natural-85 text-dark mb-5 py-3"
+              type="button"
+            >
+              <span class="align-bottom me-1"
+                ><img
+                  src="/assets/images/login/discord-icon.png"
+                  alt="discord-icon"
+                  style="width: 20px"
+              /></span>
+              Discord
+            </button>
+          </div>
+
+          <!-- 註冊表單 -->
+          <form class="py-5">
+            <input type="text" class="form-control mb-4" placeholder="帳號" />
+            <input type="email" class="form-control mb-4" placeholder="信箱" />
+
+            <div class="position-relative mb-3">
+              <input
+                type="password"
+                class="form-control pe-5"
+                placeholder="密碼"
+              />
+              <span
+                class="material-icons-outlined position-absolute top-50 end-0 translate-middle-y me-3"
+                style="cursor: pointer"
+              >
+                visibility_off
+              </span>
+            </div>
+
+            <div class="position-relative mb-3">
+              <input
+                type="password"
+                class="form-control pe-5"
+                placeholder="確認密碼"
+              />
+              <span
+                class="material-icons-outlined position-absolute top-50 end-0 translate-middle-y me-3"
+                style="cursor: pointer"
+              >
+                visibility_off
+              </span>
+            </div>
+
+            <!-- 條款勾選 -->
+            <div class="form-check mb-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="termsCheck"
+              />
+              <label
+                class="form-check-label fs-body-sm text-natural-50"
+                for="termsCheck"
+              >
+                我同意 <a href="#">服務條款</a> 和 <a href="#">隱私政策</a>
+              </label>
+            </div>
+
+            <!-- 送出按鈕 -->
+            <button type="submit" class="btn btn-dark w-100 py-3">
+              送出
+              <span class="material-icons-outlined align-bottom me-1">
+                chevron_right
+              </span>
+            </button>
+          </form>
+
+          <!-- 切回登入 -->
+          <p class="text-center mt-4">
+            已有帳號？
+            <a
+              href="#"
+              class="link-primary text-decoration-none"
+              data-bs-toggle="modal"
+              data-bs-target="#authModal"
+              data-bs-dismiss="modal"
+            >
+              立即登入
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

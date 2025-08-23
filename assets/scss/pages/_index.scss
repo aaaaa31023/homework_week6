@@ -1,0 +1,113 @@
+.gradient-ball {
+  background: url(/assets/images/other-img/Ellipse.png) no-repeat center 40px /
+    800px;
+}
+
+.card-content {
+  max-width: 400px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.hide-scrollbar-x {
+  overflow-x: auto; /* 還是可以滑動 */
+  scrollbar-width: none; /* FireFox 隱藏 scrollbar */
+}
+.hide-scrollbar-x::-webkit-scrollbar {
+  display: none; /* Chrome, Safari 隱藏 scrollbar */
+}
+
+// new
+
+/* 卡牌 hover 動效 */
+.why-card img {
+  transition: transform 0.6s ease;
+}
+.why-card:hover img {
+  transform: scale(1.03);
+}
+
+/* 文字覆蓋層：預設隱藏，hover 才淡入 */
+.why-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6); /* 0.6 = 60% 透明度 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+.why-card:hover .why-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 左下角標籤：貼齊左下，右側圓角 */
+.why-badge {
+  position: absolute;
+  left: 0;
+  bottom: 0; /* 貼齊 */
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--bs-body-bg);
+  border-radius: 0 1rem 1rem 0; /* 只讓右側圓角 */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.career-partner {
+  background: url(/assets/images/other-img/Ellipse.png) no-repeat
+    calc(100% + 180px) calc(100% + 300px) / 800px;
+}
+
+.sever-card {
+  max-width: 306px;
+}
+.badge-tl-xl {
+  border-top-left-radius: var(--bs-border-radius-xl);
+} /* 對應 rounded-4 */
+
+.bg-grid {
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week6/index/bg-grid.png?raw=true);
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+/* 自訂邊框樣式 */
+.border-dashed {
+  border-bottom-style: dashed;
+}
+.border-dotted {
+  border-bottom-style: dotted;
+}
+
+/* 男孩貼紙在卡片右上方、浮在外面 */
+.why-sticker {
+  position: absolute;
+  top: -184px; /* 往上推出卡片 */
+  right: 8px; /* 右側對齊微調 */
+  width: 196px; /* 貼紙大小可調整 */
+  height: auto;
+  z-index: 5;
+  pointer-events: none; /* 避免擋到點擊 */
+}
+
+/* 若要在小螢幕也顯示，刪掉 d-none d-lg-block 或加上這段 */
+@media (max-width: 991.98px) {
+  .why-sticker {
+    top: -60px;
+    width: 110px;
+  }
+}

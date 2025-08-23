@@ -1,0 +1,85 @@
+// 依設計稿：Mobile 尺寸預設，≥lg 切換成 Desktop 尺寸
+// 欄位：mobile / desktop / weight / line-height
+$wk-typescale: (
+  "display": (
+    mobile: 48px,
+    desktop: 80px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "title-5xl": (
+    mobile: 32px,
+    desktop: 48px,
+    weight: 700,
+    lh: 1.2,
+  ),
+
+  "title-5x2": (
+    mobile: 32px,
+    desktop: 80px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "title-4xl": (
+    mobile: 28px,
+    desktop: 32px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "title-3xl": (
+    mobile: 24px,
+    desktop: 28px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "title-2xl": (
+    mobile: 20px,
+    desktop: 24px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "title-xl": (
+    mobile: 18px,
+    desktop: 20px,
+    weight: 700,
+    lh: 1.2,
+  ),
+  "body-lg": (
+    mobile: 16px,
+    desktop: 18px,
+    weight: 400,
+    lh: 1.5,
+  ),
+  "body-md": (
+    mobile: 14px,
+    desktop: 16px,
+    weight: 400,
+    lh: 1.5,
+  ),
+  "body-sm": (
+    mobile: 14px,
+    desktop: 14px,
+    weight: 400,
+    lh: 1.5,
+  ),
+  "body-xs": (
+    mobile: 12px,
+    desktop: 12px,
+    weight: 400,
+    lh: 1.5,
+  ),
+);
+
+// 產生 .fs-<name> 類別
+@each $name, $conf in $wk-typescale {
+  .fs-#{$name} {
+    font-size: map-get($conf, mobile);
+    font-weight: map-get($conf, weight);
+    line-height: map-get($conf, lh);
+
+    // ≥ lg 用桌機尺寸
+    @include media-breakpoint-up(lg) {
+      font-size: map-get($conf, desktop);
+    }
+  }
+}

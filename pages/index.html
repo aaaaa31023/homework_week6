@@ -8,7 +8,9 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
-    <title>workway</title>
+    <title>Workway</title>
+    <!-- 動畫 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <%- include('./layout/header'); -%>
@@ -61,16 +63,17 @@
         <!-- 照片區域 -->
         <div class="container-fluid">
           <div class="row d-flex">
-            <div class="col d-none d-lg-block">
+            <div class="col d-none d-lg-block" data-aos="fade-down">
               <img src="/assets/images/hero/hero-1.png" alt="hero-1" />
             </div>
             <div
               class="col d-none d-lg-flex flex-lg-column justify-content-between"
+              data-aos="fade-down"
             >
               <img src="/assets/images/hero/hero-2.png" alt="" />
               <img src="/assets/images/hero/hero-3.png" alt="" />
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-down">
               <img src="/assets/images/hero/hero-4.png" alt="" />
             </div>
           </div>
@@ -100,6 +103,7 @@
             <!-- 右 -->
             <div
               class="col-lg-8 p-3 d-content hide-scrollbar-x overflow-x-auto"
+              data-aos="fade-right"
             >
               <div class="crad-group d-flex flex-nowrap">
                 <div
@@ -322,7 +326,11 @@
 
       <!-- 遇見你的職涯夥伴 -->
       <div class="container-lg py-lg-7 py-6 career-partner">
-        <div class="row">
+        <div
+          class="row"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div class="col-lg-6 mb-6 mb-lg-0">
             <img
               src="https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week6/index/team.png?raw=true"
@@ -376,7 +384,7 @@
           <!-- 四等分卡片，容器內呈現 -->
           <div class="row g-4 g-lg-5 justify-content-center">
             <!-- STEP 1 -->
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in-right">
               <article
                 class="position-relative h-100 rounded-4 shadow-sm bg-white d-flex flex-column align-items-center text-center px-4 px-lg-5 py-6 py-lg-7"
               >
@@ -403,7 +411,7 @@
             </div>
 
             <!-- STEP 2 -->
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in-right">
               <article
                 class="position-relative h-100 rounded-4 shadow-sm bg-white d-flex flex-column align-items-center text-center px-4 px-lg-5 py-6 py-lg-7"
               >
@@ -426,7 +434,7 @@
             </div>
 
             <!-- STEP 3 -->
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in-right">
               <article
                 class="position-relative h-100 rounded-4 shadow-sm bg-white d-flex flex-column align-items-center text-center px-4 px-lg-5 py-6 py-lg-7"
               >
@@ -449,7 +457,7 @@
             </div>
 
             <!-- STEP 4 -->
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in-right">
               <article
                 class="position-relative h-100 rounded-4 shadow-sm bg-white d-flex flex-column align-items-center text-center px-4 px-lg-5 py-6 py-lg-7"
               >
@@ -492,7 +500,7 @@
             <h2 class="fs-lg-1 fs-2 fw-bold text-center mb-6 mb-lg-9">
               你可能有些困惑...
             </h2>
-            <div class="col-5 d-none d-lg-block">
+            <div class="col-5 d-none d-lg-block" data-aos="zoom-in-right">
               <img
                 src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/c07852c7f1c21031d6380bb4398e2163f71122c9/2025-week6/index/qa.svg"
                 alt=""
@@ -700,7 +708,7 @@
 
       <!-- 聯絡方式 -->
       <div class="container-lg pt-lg-7 pt-6">
-        <div class="row">
+        <div class="row" data-aos="zoom-in-right">
           <div class="col-12">
             <!-- 加上 rounded-4 -->
             <div class="bg-primary rounded-4 px-4 py-5 px-lg-6 py-lg-5">
@@ -767,7 +775,9 @@
     </main>
 
     <%- include('./layout/modal'); -%><%- include('./layout/footer'); -%>
-
+    <!-- AOS-js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS-js end-->
     <script type="module" src="../main.js"></script>
   </body>
 </html>
